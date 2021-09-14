@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Route, Link } from 'react-router-dom';
 
 import styles from './app.module.scss';
 import { AuthLogin as Login } from '@cea/auth/login';
+import PrivateRoute from './components/PrivateRoute';
 
 const userAccount = {
   email: 'dishant@cea.com',
@@ -54,10 +55,11 @@ export function App() {
         render={() => <Login onLogin={onLogin} token={token} />}
       />
 
-      <Route
+      <PrivateRoute
+        token={token}
         path="/"
         exact
-        render={() => (
+        component={() => (
           <div>
             Chapter 2: Libraries 20 This is the generated root route.{' '}
             <Link to="/page-2">Click here for page 2.</Link>
@@ -66,10 +68,11 @@ export function App() {
         )}
       />
 
-      <Route
+      <PrivateRoute
+        token={token}
         path="/page-2"
         exact
-        render={() => (
+        component={() => (
           <div>
             <Link to="/">Click here to go back to root page.</Link>
           </div>
