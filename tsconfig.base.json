@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cea/feature": ["libs/feature/src/index.ts"]
+      "@cea/auth/login": ["libs/auth/login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

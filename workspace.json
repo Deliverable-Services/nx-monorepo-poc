@@ -1,6 +1,28 @@
 {
   "version": 2,
   "projects": {
+    "auth-login": {
+      "root": "libs/auth/login",
+      "sourceRoot": "libs/auth/login/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/auth/login/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/auth/login"],
+          "options": {
+            "jestConfig": "libs/auth/login/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "client-portal": {
       "root": "apps/client-portal",
       "sourceRoot": "apps/client-portal/src",
@@ -101,28 +123,6 @@
           "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": ["apps/client-portal-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "feature": {
-      "root": "libs/feature",
-      "sourceRoot": "libs/feature/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["libs/feature/**/*.{ts,tsx,js,jsx}"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature"],
-          "options": {
-            "jestConfig": "libs/feature/jest.config.js",
-            "passWithNoTests": true
           }
         }
       }

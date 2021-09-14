@@ -27,15 +27,15 @@
     ]
   },
   "projects": {
+    "auth-login": {
+      "tags": []
+    },
     "client-portal": {
       "tags": []
     },
     "client-portal-e2e": {
       "tags": [],
       "implicitDependencies": ["client-portal"]
-    },
-    "feature": {
-      "tags": []
     }
   }
 }

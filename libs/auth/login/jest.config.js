@@ -1,9 +1,9 @@
 module.exports = {
-  displayName: 'feature',
-  preset: '../../jest.preset.js',
+  displayName: 'auth-login',
+  preset: '../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/feature',
+  coverageDirectory: '../../../coverage/libs/auth/login',
 };
