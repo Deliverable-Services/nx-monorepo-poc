@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import styles from './app.module.scss';
 import { AuthLogin as Login } from '@cea/auth/login';
 import PrivateRoute from './components/PrivateRoute';
+import Dashboard from './pages/Dashboard';
 
 const userAccount = {
   email: 'dishant@cea.com',
@@ -49,6 +50,8 @@ export function App() {
     <div className={styles.app}>
       <button onClick={clearToken}>Clear token</button>
 
+      <Redirect path="/" exact to="/dashboard" />
+
       <Route
         path="/auth"
         exact
@@ -57,26 +60,9 @@ export function App() {
 
       <PrivateRoute
         token={token}
-        path="/"
+        path="/dashboard"
         exact
-        component={() => (
-          <div>
-            Chapter 2: Libraries 20 This is the generated root route.{' '}
-            <Link to="/page-2">Click here for page 2.</Link>
-            <Link to="/auth">Login</Link>
-          </div>
-        )}
-      />
-
-      <PrivateRoute
-        token={token}
-        path="/page-2"
-        exact
-        component={() => (
-          <div>
-            <Link to="/">Click here to go back to root page.</Link>
-          </div>
-        )}
+        component={() => <Dashboard />}
       />
     </div>
   );
