@@ -33,7 +33,7 @@ export const AuthLogin = (props: AuthLoginProps) => {
   useEffect(() => {
     if (token) {
       history.push({
-        pathname: '/',
+        pathname: '/dashboard',
       });
     }
   }, [history, token]);

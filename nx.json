@@ -36,6 +36,13 @@
     "client-portal-e2e": {
       "tags": [],
       "implicitDependencies": ["client-portal"]
+    },
+    "qa-service": {
+      "tags": []
+    },
+    "qa-service-e2e": {
+      "tags": [],
+      "implicitDependencies": ["qa-service"]
     }
   }
 }
